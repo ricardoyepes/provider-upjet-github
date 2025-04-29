@@ -5625,6 +5625,21 @@ func (in *RepositoryRulesetInitParameters) DeepCopyInto(out *RepositoryRulesetIn
 		*out = new(string)
 		**out = **in
 	}
+	if in.Repository != nil {
+		in, out := &in.Repository, &out.Repository
+		*out = new(string)
+		**out = **in
+	}
+	if in.RepositoryRef != nil {
+		in, out := &in.RepositoryRef, &out.RepositoryRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.RepositorySelector != nil {
+		in, out := &in.RepositorySelector, &out.RepositorySelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
+	}
 	if in.Rules != nil {
 		in, out := &in.Rules, &out.Rules
 		*out = make([]RulesInitParameters, len(*in))
@@ -5723,6 +5738,11 @@ func (in *RepositoryRulesetObservation) DeepCopyInto(out *RepositoryRulesetObser
 		*out = new(string)
 		**out = **in
 	}
+	if in.Repository != nil {
+		in, out := &in.Repository, &out.Repository
+		*out = new(string)
+		**out = **in
+	}
 	if in.Rules != nil {
 		in, out := &in.Rules, &out.Rules
 		*out = make([]RulesObservation, len(*in))
@@ -5778,6 +5798,21 @@ func (in *RepositoryRulesetParameters) DeepCopyInto(out *RepositoryRulesetParame
 		in, out := &in.Name, &out.Name
 		*out = new(string)
 		**out = **in
+	}
+	if in.Repository != nil {
+		in, out := &in.Repository, &out.Repository
+		*out = new(string)
+		**out = **in
+	}
+	if in.RepositoryRef != nil {
+		in, out := &in.RepositoryRef, &out.RepositoryRef
+		*out = new(v1.Reference)
+		(*in).DeepCopyInto(*out)
+	}
+	if in.RepositorySelector != nil {
+		in, out := &in.RepositorySelector, &out.RepositorySelector
+		*out = new(v1.Selector)
+		(*in).DeepCopyInto(*out)
 	}
 	if in.Rules != nil {
 		in, out := &in.Rules, &out.Rules
